@@ -13,7 +13,7 @@ flowshow.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider)
         .primaryPalette('red');
 });
 
-flowshow.controller("NewsController", function($scope, FeedService) {
+flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
 
     FeedService.getFeed("http://www.dn.se/nyheter/m/rss/")
         .then(function(response) {
@@ -30,7 +30,20 @@ flowshow.controller("NewsController", function($scope, FeedService) {
         }
     }
 
+    function viewFullText(ev, entry) {
+        $mdDialog.show(
+            $mdDialog.alert()
+                .clickOutsideToClose(true)
+                .title(entry.title)
+                .textContent(entry.content)
+                .ariaLabel('Full text')
+                .ok('Close')
+                .targetEvent(ev)
+        );
+    }
+
     $scope.getAvatar = getAvatar;
+    $scope.viewFullText = viewFullText;
 });
 
 flowshow.controller("FooterController", function($scope) {

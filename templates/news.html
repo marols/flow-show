@@ -14,7 +14,9 @@
                     <h3><a href="{{entry.link}}" target="_blank">{{ entry.title }}</a></h3>
                     <h4 class="date">{{entry.publishedDate | date: 'MMM dd - yyyy' }}</h4>
                     <p>
-                        {{ entry.contentSnippet}}
+                        {{entry.contentSnippet}}
+                        <i class="mdi mdi-tooltip-text md-primary" ng-click="viewFullText($event, entry)"
+                           alt="Show full text"></i>
                     </p>
                 </div>
                 <md-divider></md-divider>
