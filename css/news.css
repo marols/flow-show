@@ -47,3 +47,8 @@ md-list md-list-item.md-3-line .md-list-item-text p i:hover {
 .carousel-inner .carousel-caption h4 {
     text-shadow: 0 1px 4px black;
 }
+
+md-input-container {
+    font-size: 20px;
+    line-height: 20px;
+}

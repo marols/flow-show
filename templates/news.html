@@ -39,9 +39,18 @@
 
     <div class="flex-column">
         <h3>News feed</h3>
+        <p>
+            Scroll through the list of news or use the search.
+        </p>
+
+        <md-input-container md-no-float>
+            <md-icon class="mdi mdi-magnify md-primary"></md-icon>
+            <input ng-model="searchQuery" type="text" placeholder="Search news">
+        </md-input-container>
+
         <md-list>
             <md-divider></md-divider>
-            <md-list-item class="md-3-line md-dense entry" ng-repeat="entry in news.entries">
+            <md-list-item class="md-3-line md-dense entry" ng-repeat="entry in news.entries | filter: searchQuery" ng-if="(news && news.entries)">
                 <img ng-src="{{getAvatar(entry)}}" width="100px" class="thumb"/>
                 <div class="md-list-item-text">
                     <h3><a href="{{entry.link}}" target="_blank">{{ entry.title }}</a></h3>
