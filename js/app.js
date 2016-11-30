@@ -1,4 +1,4 @@
-var flowshow = angular.module("flowshow", ['ui.router', 'ngMaterial']);
+var flowshow = angular.module("flowshow", ['ui.router', 'ngMaterial', 'ui.bootstrap']);
 
 flowshow.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider) {
     $stateProvider
@@ -14,16 +14,32 @@ flowshow.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider)
 });
 
 flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
+    // Carousel default values
+    $scope.myInterval = 3000;
+    $scope.noWrapSlides = false;
+    $scope.activeSlide = 0;
 
     FeedService.getFeed("http://www.dn.se/nyheter/m/rss/")
         .then(function(response) {
             $scope.news = response.data.responseData.feed;
-            console.log(response);
+
+            $scope.topStories = $scope.news.entries.filter(function(item) {
+                return item.mediaGroups;
+            }).slice(0, 10);
         });
 
     function getAvatar(entry) {
         try {
             return entry.mediaGroups[0].contents[0].thumbnails[0].url;
+        }
+        catch (error) {
+            return "img/dn.png";
+        }
+    }
+
+    function getImage(entry) {
+        try {
+            return entry.mediaGroups[0].contents[0].url;
         }
         catch (error) {
             return "img/dn.png";
@@ -43,6 +59,7 @@ flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
     }
 
     $scope.getAvatar = getAvatar;
+    $scope.getImage = getImage;
     $scope.viewFullText = viewFullText;
 });
 

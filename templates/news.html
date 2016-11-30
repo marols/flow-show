@@ -1,15 +1,48 @@
 <section class="flex-column">
-    <div class="card">
-        <h3>What is this?</h3>
-        <p>Flow Show is your own personal RSS reader for the latest news on <a href="https://www.dn.se" target="_blank">Dagens
-            Nyheter</a>.</p>
+    <div class="flex-row">
+        <md-divider class="red"></md-divider>
     </div>
 
     <div class="flex-column">
+        <h3>What is this?</h3>
+        <p>
+            Flow Show is your own personal RSS reader for the latest news on <a href="https://www.dn.se"
+                                                                                target="_blank">Dagens
+            Nyheter</a>.
+        </p>
+
+    </div>
+
+    <div class="flex-row">
+        <md-divider class="red"></md-divider>
+    </div>
+
+    <div class="flex-column">
+        <h3>Highlights</h3>
+        <div id="slides_control">
+            <div>
+                <uib-carousel interval="myInterval" active="activeSlide">
+                    <uib-slide ng-repeat="entry in topStories | limitTo: 10" index="$index">
+                        <img ng-src="{{getImage(entry)}}">
+                        <div class="carousel-caption">
+                            <h4 ng-href="{{entry.link}}">{{entry.title}}</h4>
+                        </div>
+                    </uib-slide>
+                </uib-carousel>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-row">
+        <md-divider class="red"></md-divider>
+    </div>
+
+    <div class="flex-column">
+        <h3>News feed</h3>
         <md-list>
             <md-divider></md-divider>
             <md-list-item class="md-3-line md-dense entry" ng-repeat="entry in news.entries">
-                <img ng-src="{{getAvatar(entry)}}" width="100px" class="thumbnail"/>
+                <img ng-src="{{getAvatar(entry)}}" width="100px" class="thumb"/>
                 <div class="md-list-item-text">
                     <h3><a href="{{entry.link}}" target="_blank">{{ entry.title }}</a></h3>
                     <h4 class="date">{{entry.publishedDate | date: 'MMM dd - yyyy' }}</h4>

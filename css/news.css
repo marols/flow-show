@@ -2,7 +2,7 @@ md-list {
     width: 80%;
 }
 
-img.thumbnail {
+img.thumb {
     padding: 4px 16px;
 }
 
@@ -35,4 +35,15 @@ md-list md-list-item.md-3-line .md-list-item-text p i {
 
 md-list md-list-item.md-3-line .md-list-item-text p i:hover {
     color: #f4000e;
+}
+
+.carousel-inner > .item {
+    height: 200px;
+    width: 500px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-inner .carousel-caption h4 {
+    text-shadow: 0 1px 4px black;
 }

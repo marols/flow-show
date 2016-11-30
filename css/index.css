@@ -17,7 +17,6 @@ header {
     max-height: 80px;
     width: 80%;
     text-align: center;
-    border-bottom: solid 1px #f4000e;
     margin-bottom: 16px;
 }
 
@@ -32,11 +31,14 @@ footer {
 .flex-row {
     flex-direction: row;
     justify-content: center;
+    padding-bottom: 16px;
+    width: 100%
 }
 
 .flex-column {
     flex-direction: column;
     justify-content: flex-start;
+    padding-bottom: 16px;
 }
 
 .content {
@@ -49,6 +51,11 @@ footer {
     padding: 0px 16px;
     margin: 32px;
     max-width: 80%;
+}
+
+md-divider.red {
+    width: 80%;
+    border-top: solid 1px #f4000e;
 }
 
 footer {
