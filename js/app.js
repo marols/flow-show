@@ -66,11 +66,16 @@ flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
         window.open(entry.link, '_blank');
     }
 
+    function newDate(string) {
+        return new Date(string).toLocaleString();
+    }
+
     $scope.getAvatar = getAvatar;
     $scope.getImage = getImage;
     $scope.getAuthor = getAuthor;
     $scope.viewFullText = viewFullText;
     $scope.openLink = openLink;
+    $scope.newDate = newDate;
 });
 
 flowshow.controller("FooterController", function($scope) {

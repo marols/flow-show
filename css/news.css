@@ -60,3 +60,8 @@ md-input-container {
     font-size: 20px;
     line-height: 20px;
 }
+
+.time-icon {
+    padding-right: 8px;
+    vertical-align: middle;
+}
