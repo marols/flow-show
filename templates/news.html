@@ -3,11 +3,12 @@
         <md-divider class="red"></md-divider>
     </div>
 
-    <flex-column>
+    <flex-column class="whats-this">
         <h3>What is this?</h3>
         <p>
-            Flow Show is your own personal RSS reader for the latest news on the Swedish news site <a href="https://www.dn.se"
-                                                                                target="_blank">Dagens
+            Flow Show is your own personal RSS reader for the latest news on the Swedish news site <a
+                href="https://www.dn.se"
+                target="_blank">Dagens
             Nyheter</a>.
         </p>
 
@@ -50,7 +51,8 @@
 
         <md-list>
             <md-divider></md-divider>
-            <md-list-item class="md-3-line md-dense entry" ng-repeat="entry in news.entries | filter: searchQuery" ng-if="(news && news.entries)">
+            <md-list-item class="md-3-line md-dense entry" ng-repeat="entry in news.entries | filter: searchQuery"
+                          ng-if="(news && news.entries)">
                 <img ng-src="{{getAvatar(entry)}}" width="100px" class="thumb"/>
                 <div class="md-list-item-text">
                     <h3><a href="{{entry.link}}" target="_blank">{{ entry.title }}</a></h3>
