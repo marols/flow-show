@@ -58,9 +58,14 @@ flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
         );
     }
 
+    function openLink(entry) {
+        window.open(entry.link, '_blank');
+    }
+
     $scope.getAvatar = getAvatar;
     $scope.getImage = getImage;
     $scope.viewFullText = viewFullText;
+    $scope.openLink = openLink;
 });
 
 flowshow.controller("FooterController", function($scope) {

@@ -23,10 +23,10 @@
         <div id="slides_control" ng-if="topStories">
             <div>
                 <uib-carousel interval="myInterval" active="activeSlide">
-                    <uib-slide ng-repeat="entry in topStories | limitTo: 10" index="$index">
+                    <uib-slide ng-repeat="entry in topStories | limitTo: 10" index="$index" ng-click="openLink(entry)">
                         <img ng-src="{{getImage(entry)}}">
                         <div class="carousel-caption">
-                            <h4 ng-href="{{entry.link}}">{{entry.title}}</h4>
+                            <h4>{{entry.title}}</h4>
                         </div>
                     </uib-slide>
                 </uib-carousel>
