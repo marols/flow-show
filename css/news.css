@@ -10,3 +10,21 @@ md-list-item.entry {
     padding: 8px;
 }
 
+md-list md-list-item.md-3-line .md-list-item-text {
+    margin: 0;
+}
+
+md-list md-list-item.md-3-line .md-list-item-text h3 a {
+    color: #404040;
+    text-decoration: none;
+}
+
+md-list md-list-item.md-3-line .md-list-item-text h3 a:hover {
+    color: #404040;
+    text-decoration: underline;
+}
+
+md-list md-list-item.md-3-line .md-list-item-text h4 {
+    color: gray;
+    font-size: small;
+}
