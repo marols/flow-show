@@ -5,6 +5,11 @@ html {
 body {
     background: white;
     height: auto;
+    font-family: Georgia, "Times New Roman", Times, serif
+}
+
+h1, h2, h3, h4 {
+    font-family: GuardianSansBold, Georgia, "Times New Roman", Times, serif;
 }
 
 header {
@@ -14,10 +19,6 @@ header {
     text-align: center;
     border-bottom: solid 1px red;
     margin-bottom: 16px;
-}
-
-header h1 {
-    font-family: GuardianSansBold, Georgia, "Times New Roman", Times, serif;
 }
 
 header md-divider {
