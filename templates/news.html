@@ -1,20 +1,22 @@
 <section class="flex-column">
     <div class="card">
         <h3>What is this?</h3>
-        <p>Flow Show is your own personal RSS reader for the latest news on <a href="https://www.dn.se" target="_blank">Dagens Nyheter</a></p>.
+        <p>Flow Show is your own personal RSS reader for the latest news on <a href="https://www.dn.se" target="_blank">Dagens
+            Nyheter</a>.</p>
     </div>
 
     <div class="flex-column">
-        <md-list ng-repeat="item in news.entries">
-            <md-list-item class="md-3-line md-long-text">
-                <img ng-src="{{todos[0].face}}?25" class="md-avatar" alt="{{todos[0].who}}"/>
+        <md-list>
+            <md-list-item class="md-3-line md-dense entry" ng-repeat="entry in news.entries">
+                <img ng-src="{{getAvatar(entry)}}" width="100px" class="thumbnail"/>
                 <div class="md-list-item-text">
-                    <h3>{{ item.title }}</h3>
-                    <h4><a href="{{item.link}}" target="_blank">{{ item.link }}</a></h4>
+                    <h3><a href="{{entry.link}}" target="_blank">{{ entry.title }}</a></h3>
+                    <h4 class="date">{{entry.publishedDate | date: 'MMM dd - yyyy' }}</h4>
                     <p>
-                        {{ item.contentSnippet}}
+                        {{ entry.contentSnippet}}
                     </p>
                 </div>
+                <md-divider></md-divider>
             </md-list-item>
         </md-list>
     </div>

@@ -15,12 +15,22 @@ flowshow.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider)
 
 flowshow.controller("NewsController", function($scope, FeedService) {
 
-
     FeedService.getFeed("http://www.dn.se/nyheter/m/rss/")
         .then(function(response) {
             $scope.news = response.data.responseData.feed;
             console.log(response);
         });
+
+    function getAvatar(entry) {
+        try {
+            return entry.mediaGroups[0].contents[0].thumbnails[0].url;
+        }
+        catch (error) {
+            return "img/dn.png";
+        }
+    }
+
+    $scope.getAvatar = getAvatar;
 });
 
 flowshow.controller("FooterController", function($scope) {
@@ -44,10 +54,9 @@ flowshow.controller("FooterController", function($scope) {
     ;
 });
 
-
-flowshow.factory('FeedService',['$http',function($http){
+flowshow.factory('FeedService', ['$http', function($http) {
     return {
-        getFeed : function(url){
+        getFeed: function(url) {
             return $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(url));
         }
     }

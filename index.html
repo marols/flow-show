@@ -29,11 +29,11 @@
         <h1>Flow Show</h1>
     </header>
 
-    <div class="content" ui-view></div>
+<div class="content" ui-view></div>
 
-    <footer ng-controller="FooterController">
-        <span>© Martin Walter</span>
-        <span>
+<footer ng-controller="FooterController">
+    <span>© Martin Walter</span>
+    <span>
             <md-button ng-repeat="item in links"
                        class="md-icon-button"
                        href="{{item.url}}"
@@ -42,6 +42,6 @@
                 <md-tooltip md-direction="top">{{item.name}}</md-tooltip>
             </md-button>
         </span>
-    </footer>
+</footer>
 </body>
 </html>

@@ -1,3 +1,12 @@
 md-list {
     width: 80%;
 }
+
+img.thumbnail {
+    padding: 4px 16px;
+}
+
+md-list-item.entry {
+    padding: 8px;
+}
+
