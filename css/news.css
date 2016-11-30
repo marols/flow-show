@@ -65,6 +65,11 @@ md-input-container {
     padding-right: 8px;
     vertical-align: middle;
 }
+
+.date {
+    padding-bottom: 4px;
+}
+
 .share-buttons {
     justify-content: flex-start;
     padding: 8px 0;
