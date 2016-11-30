@@ -20,6 +20,11 @@ header {
     margin-bottom: 16px;
 }
 
+header img {
+    padding-right: 16px;
+    vertical-align: baseline;
+}
+
 .flex-row,
 .flex-column,
 footer {
