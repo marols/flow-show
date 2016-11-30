@@ -46,6 +46,10 @@ flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
         }
     }
 
+    function getAuthor(entry) {
+        return entry.author.length > 0 ? entry.author : 'Unknown';
+    }
+
     function viewFullText(ev, entry) {
         $mdDialog.show(
             $mdDialog.alert()
@@ -64,6 +68,7 @@ flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
 
     $scope.getAvatar = getAvatar;
     $scope.getImage = getImage;
+    $scope.getAuthor = getAuthor;
     $scope.viewFullText = viewFullText;
     $scope.openLink = openLink;
 });
