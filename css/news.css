@@ -65,3 +65,11 @@ md-input-container {
     padding-right: 8px;
     vertical-align: middle;
 }
+.share-buttons {
+    justify-content: flex-start;
+    padding: 8px 0;
+}
+
+.share-buttons div {
+    padding-right: 32px;
+}

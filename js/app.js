@@ -70,12 +70,21 @@ flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
         return new Date(string).toLocaleString();
     }
 
+    function getFacebookHref(entry) {
+        return [
+            "https://www.facebook.com/sharer/sharer.php?u=",
+            entry.link,
+            "&amp;src=sdkpreparse"
+        ].join("");
+    }
+
     $scope.getAvatar = getAvatar;
     $scope.getImage = getImage;
     $scope.getAuthor = getAuthor;
     $scope.viewFullText = viewFullText;
     $scope.openLink = openLink;
     $scope.newDate = newDate;
+    $scope.getFacebookHref = getFacebookHref;
 });
 
 flowshow.controller("FooterController", function($scope) {
