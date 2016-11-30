@@ -70,6 +70,15 @@ flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
         return new Date(string).toLocaleString();
     }
 
+    function getMailtoHref(entry) {
+        return [
+            "mailto:share@toyourfriend.com?subject=Check this out:",
+            entry.title,
+            "&body=Check out this news flash! ",
+            entry.link
+            ].join("");
+    }
+
     function getFacebookHref(entry) {
         return [
             "https://www.facebook.com/sharer/sharer.php?u=",
@@ -84,6 +93,7 @@ flowshow.controller("NewsController", function($scope, $mdDialog, FeedService) {
     $scope.viewFullText = viewFullText;
     $scope.openLink = openLink;
     $scope.newDate = newDate;
+    $scope.getMailtoHref = getMailtoHref;
     $scope.getFacebookHref = getFacebookHref;
 });
 
