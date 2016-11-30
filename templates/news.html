@@ -6,7 +6,7 @@
     <div class="flex-column">
         <h3>What is this?</h3>
         <p>
-            Flow Show is your own personal RSS reader for the latest news on <a href="https://www.dn.se"
+            Flow Show is your own personal RSS reader for the latest news on the Swedish news site <a href="https://www.dn.se"
                                                                                 target="_blank">Dagens
             Nyheter</a>.
         </p>
@@ -19,7 +19,7 @@
 
     <div class="flex-column">
         <h3>Highlights</h3>
-        <div id="slides_control">
+        <div id="slides_control" ng-if="topStories">
             <div>
                 <uib-carousel interval="myInterval" active="activeSlide">
                     <uib-slide ng-repeat="entry in topStories | limitTo: 10" index="$index">
