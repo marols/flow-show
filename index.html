@@ -26,17 +26,18 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/news.css">
 </head>
-<body ng-app="flowshow" class="flex-column">
+<body ng-app="flowshow">
+<flex-column>
 
-<header>
-    <h1><img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Dagens_Nyheter.svg" height="20">Flow Show</h1>
-</header>
+    <header>
+        <h1><img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Dagens_Nyheter.svg" height="20">Flow Show</h1>
+    </header>
 
-<div class="content" ui-view></div>
+    <content ui-view></content>
 
-<footer ng-controller="FooterController">
-    <span>© Martin Walter</span>
-    <span>
+    <footer ng-controller="FooterController">
+        <span>© Martin Walter</span>
+        <span>
             <md-button ng-repeat="item in links"
                        class="md-icon-button"
                        href="{{item.url}}"
@@ -45,6 +46,7 @@
                 <md-tooltip md-direction="top">{{item.name}}</md-tooltip>
             </md-button>
         </span>
-</footer>
+    </footer>
+</flex-column>
 </body>
 </html>
