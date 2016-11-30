@@ -17,7 +17,7 @@ header {
     max-height: 80px;
     width: 80%;
     text-align: center;
-    border-bottom: solid 1px red;
+    border-bottom: solid 1px #f4000e;
     margin-bottom: 16px;
 }
 
