@@ -1,3 +1,12 @@
+var angular = require('angular');
+require('angular-messages');
+require('angular-aria');
+require('angular-animate');
+require('angular-ui-router');
+require('angular-material');
+require('angular-bootstrap-npm');
+
+
 var flowshow = angular.module("flowshow", ['ui.router', 'ngMaterial', 'ui.bootstrap']);
 
 flowshow.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider) {

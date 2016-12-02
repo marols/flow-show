@@ -1,0 +1,26 @@
+{
+  "name": "flow-show",
+  "version": "0.0.7",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "browserify": "browserify js/app.js -o bundle.js"
+  },
+  "author": "Martin Walter",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-animate": "^1.5.9",
+    "angular-aria": "^1.5.9",
+    "angular-bootstrap-npm": "^0.14.3",
+    "angular-material": "^1.1.1",
+    "angular-messages": "^1.5.9",
+    "angular-ui-router": "^0.3.2"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "connect": "^3.5.0",
+    "serve-static": "^1.11.1"
+  }
+}
