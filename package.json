@@ -2,14 +2,14 @@
   "name": "flow-show",
   "version": "0.0.7",
   "description": "",
-  "main": "bundle.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "start": "node server.js",
-    "watchify": "watchify --entry js/app.js --outfile bundle.js --verbose --debug",
-    "browserify": "browserify -t browserify-ngannotate js/app.js > app.browserify.js",
-    "uglify": "uglifyjs app.browserify.js --compress --mangle --screw-ie8 -o bundle.js",
-    "dev": "npm run watchify | npm run start",
-    "prod": "npm run browserify && npm run uglify && npm run start"
+    "watchify": "watchify --entry js/app.js --outfile dist/bundle.js --verbose --debug",
+    "browserify": "browserify -t browserify-ngannotate js/app.js > dist/app.browserify.js",
+    "uglify": "uglifyjs dist/app.browserify.js --compress --mangle --screw-ie8 -o dist/bundle.js",
+    "dev": "mkdir -p dist && npm run watchify | npm run start",
+    "prod": "mkdir -p dist && npm run browserify && npm run uglify && npm run start"
   },
   "author": "Martin Walter",
   "license": "MIT",
