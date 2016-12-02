@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node server.js",
     "watchify": "watchify --entry js/app.js --outfile bundle.js --verbose --debug",
-    "dev": "npm run watchify | npm run start"
+    "browserify": "browserify -t browserify-ngannotate js/app.js > app.browserify.js",
+    "uglify": "uglifyjs app.browserify.js --compress --mangle --screw-ie8 -o bundle.js",
+    "dev": "npm run watchify | npm run start",
+    "prod": "npm run browserify && npm run uglify && npm run start"
   },
   "author": "Martin Walter",
   "license": "MIT",
@@ -21,8 +24,10 @@
   },
   "devDependencies": {
     "browserify": "^13.1.1",
+    "browserify-ngannotate": "^2.0.0",
     "connect": "^3.5.0",
     "serve-static": "^1.11.1",
+    "uglify": "^0.1.5",
     "watchify": "^3.7.0"
   }
 }

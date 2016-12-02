@@ -5,7 +5,7 @@ Flow Show is your own personal RSS reader for the latest news on [Dagens Nyheter
 1. `npm install`
 2. Start Flow Show
   1. Execute `npm run dev` to start a node web server and Whatchify for automatically rebuilding bundle.
-
+  2. Execute `npm run prod` to start a node web server with a minified version of the code.
 
 # Made with inspiration and love from
 - https://material.angularjs.org
