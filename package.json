@@ -2,10 +2,11 @@
   "name": "flow-show",
   "version": "0.0.7",
   "description": "",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
     "start": "node server.js",
-    "browserify": "browserify js/app.js -o bundle.js"
+    "watchify": "watchify --entry js/app.js --outfile bundle.js --verbose --debug",
+    "dev": "npm run watchify | npm run start"
   },
   "author": "Martin Walter",
   "license": "MIT",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "browserify": "^13.1.1",
     "connect": "^3.5.0",
-    "serve-static": "^1.11.1"
+    "serve-static": "^1.11.1",
+    "watchify": "^3.7.0"
   }
 }
