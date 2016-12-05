@@ -2,13 +2,13 @@
   "name": "flow-show",
   "version": "0.0.7",
   "description": "",
-  "main": "dist/bundle.js",
+  "main": "dist/app.js",
   "scripts": {
     "start": "node server.js",
-    "watchify": "watchify --entry js/app.js --outfile dist/bundle.js --verbose --debug",
+    "watchify": "watchify --entry js/app.js --outfile dist/app.js --verbose --debug",
     "browserify": "browserify -t browserify-ngannotate js/app.js > dist/app.browserify.js",
-    "uglify": "uglifyjs dist/app.browserify.js --compress --mangle --screw-ie8 -o dist/bundle.js",
-    "build-css": "node-sass --inlude-path scss scss/index.scss dist/index.css | cp ext/bootstrap.min.css dist/bootstrap.min.css",
+    "uglify": "uglifyjs dist/app.browserify.js --compress --mangle --screw-ie8 -o dist/app.js",
+    "build-css": "node-sass --inlude-path scss scss/app.scss dist/app.css | cp ext/bootstrap.min.css dist/bootstrap.min.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "dev": "mkdir -p dist && npm run watchify | npm run watch-css | npm run start",
     "prod": "mkdir -p dist && npm run browserify && npm run uglify && npm run build-css && npm run start"
