@@ -8,8 +8,10 @@
     "watchify": "watchify --entry js/app.js --outfile dist/bundle.js --verbose --debug",
     "browserify": "browserify -t browserify-ngannotate js/app.js > dist/app.browserify.js",
     "uglify": "uglifyjs dist/app.browserify.js --compress --mangle --screw-ie8 -o dist/bundle.js",
-    "dev": "mkdir -p dist && npm run watchify | npm run start",
-    "prod": "mkdir -p dist && npm run browserify && npm run uglify && npm run start"
+    "build-css": "node-sass --inlude-path scss scss/index.scss dist/index.css | cp ext/bootstrap.min.css dist/bootstrap.min.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "dev": "mkdir -p dist && npm run watchify | npm run watch-css | npm run start",
+    "prod": "mkdir -p dist && npm run browserify && npm run uglify && npm run build-css && npm run start"
   },
   "author": "Martin Walter",
   "license": "MIT",
@@ -26,6 +28,8 @@
     "browserify": "^13.1.1",
     "browserify-ngannotate": "^2.0.0",
     "connect": "^3.5.0",
+    "node-sass": "^3.13.0",
+    "nodemon": "^1.11.0",
     "serve-static": "^1.11.1",
     "uglify": "^0.1.5",
     "watchify": "^3.7.0"
