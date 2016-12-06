@@ -8,7 +8,7 @@
     "watchify": "watchify --entry js/app.js --outfile dist/app.js --verbose --debug",
     "browserify": "browserify -t browserify-ngannotate js/app.js > dist/app.browserify.js",
     "uglify": "uglifyjs dist/app.browserify.js --compress --mangle --screw-ie8 -o dist/app.js",
-    "build-css": "node-sass --inlude-path scss scss/app.scss dist/app.css | cp ext/bootstrap.min.css dist/bootstrap.min.css --source-map=true",
+    "build-css": "node-sass --inlude-path scss scss/app.scss dist/app.css --source-map=true | cp ext/bootstrap.min.css dist/bootstrap.min.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "dev": "mkdir -p dist && npm run watchify | npm run watch-css | npm run start",
     "prod": "mkdir -p dist && npm run browserify && npm run uglify && npm run build-css && npm run start"
